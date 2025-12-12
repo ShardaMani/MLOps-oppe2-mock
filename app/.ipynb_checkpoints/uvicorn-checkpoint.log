@@ -1,0 +1,131 @@
+nohup: ignoring input
+/opt/conda/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator SimpleImputer from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator OneHotEncoder from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator ColumnTransformer from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator DecisionTreeClassifier from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/opt/conda/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator RandomForestClassifier from version 1.7.2 when using version 1.7.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+INFO:     Started server process [13843]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:33336 - "POST /predict HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/conda/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/conda/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/opt/conda/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/opt/conda/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/opt/conda/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+  File "/opt/conda/lib/python3.10/site-packages/fastapi/routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/conda/lib/python3.10/site-packages/fastapi/routing.py", line 215, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/conda/lib/python3.10/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "/opt/conda/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "/opt/conda/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2476, in run_sync_in_worker_thread
+    return await future
+  File "/opt/conda/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+  File "/home/jupyter/MLOps-oppe2-mock/app/main.py", line 68, in predict
+    result = {"prediction": int(pred[0]), "probability": float(proba[0]) if proba is not None else None}
+ValueError: invalid literal for int() with base 10: 'yes'
+{
+    "name": "model_predict",
+    "context": {
+        "trace_id": "0x22e6d26f5bc4980a795d573c1bf8fe4e",
+        "span_id": "0x4f1528628a697cff",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "0x88f16be45a43077b",
+    "start_time": "2025-12-12T17:47:27.351210Z",
+    "end_time": "2025-12-12T17:47:27.385929Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.36.0",
+            "service.name": "unknown_service"
+        },
+        "schema_url": ""
+    }
+}
+{
+    "name": "inference_total",
+    "context": {
+        "trace_id": "0x22e6d26f5bc4980a795d573c1bf8fe4e",
+        "span_id": "0x88f16be45a43077b",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2025-12-12T17:47:27.351146Z",
+    "end_time": "2025-12-12T17:47:27.385985Z",
+    "status": {
+        "status_code": "UNSET"
+    },
+    "attributes": {},
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "telemetry.sdk.language": "python",
+            "telemetry.sdk.name": "opentelemetry",
+            "telemetry.sdk.version": "1.36.0",
+            "service.name": "unknown_service"
+        },
+        "schema_url": ""
+    }
+}
+INFO:     127.0.0.1:40862 - "GET /health HTTP/1.1" 200 OK
