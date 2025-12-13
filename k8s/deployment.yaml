@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heart-disease-deployment
+  labels:
+    app: heart-disease-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: heart-disease-api
+  template:
+    metadata:
+      labels:
+        app: heart-disease-api
+    spec:
+      containers:
+        - name: heart-disease-container
+          image: us-central1-docker.pkg.dev/mlops-473205/mlops-models/heart-disease-pred:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8200
+          env:
+            - name: MODEL_PATH
+              value: "/app/trained_pipeline.joblib"
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
